@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.WebClient.Builder;
 
 import com.apt.moviecatalogservice.models.CatalogItem;
 import com.apt.moviecatalogservice.models.Movie;
@@ -31,8 +32,14 @@ public class MovieCatalogResourse {
 	public List<CatalogItem> getCatalog(@PathVariable("userId") String userId)
 	{
 		
+	/*	WebClient.Builder builder = new  WebClient.Builder();
 		
-		
+		Movie movie = WebClientBuilder.Build()
+		           .get()
+		           .uri()
+		           .retrieve()
+		           .bodyToMono(Movie.class)Mono<Movie>
+		           .block()*/
 		
 		// UserRating userRating = restTemplate.getForObject("http://ratings-data-service/ratingsdata/user/" + userId, UserRating.class);
 /*
