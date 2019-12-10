@@ -49,6 +49,16 @@ public class MovieCatalogResourse {
 	                    return new CatalogItem(movie.getName(), movie.getDescription(), rating.getRating());
 	                })
 	                .collect(Collectors.toList());*/
+		
+		 /* UserRating userRating = restTemplate.getForObject("http://ratings-data-service/ratingsdata/user/" + userId, UserRating.class);
+
+	        return userRating.getRatings().stream()
+	                .map(rating -> {
+	                    Movie movie = restTemplate.getForObject("http://movie-info-service/movies/" + rating.getMovieId(), Movie.class);
+	                    return new CatalogItem(movie.getName(), movie.getDescription(), rating.getRating());
+	                })
+	                .collect(Collectors.toList());*/
+		
 
 		return Collections.singletonList( new CatalogItem("BigB","Super", 4));
              
